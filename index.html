@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IBIN</title>
+
+  <link rel="stylesheet" href="./style/bootstrap.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="./style/owlCrowsel.css">
+
+  <link rel="stylesheet" href="./style/slicke.css">
+
+  <link rel="stylesheet" href="./style/aos.css">
+
+  <link rel="stylesheet" href="./style/style.css" />
+  <style>
+    .observation .crowsel {
+      position: relative;
+    }
+
+    .no-js .mainCrowsel,
+    .mainCrowsel.owl-loaded {
+      display: block;
+    }
+
+    .mainCrowsel {
+      display: none;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .mainCrowsel .owl-stage-outer {
+      position: relative;
+      overflow: hidden;
+      -webkit-transform: translate3d(0, 0, 0);
+    }
+
+    .mainCrowsel .owl-item {
+      -webkit-tap-highlight-color: transparent;
+      position: relative;
+    }
+
+    .mainCrowsel .owl-item {
+      min-height: 1px;
+      float: left;
+      -webkit-backface-visibility: hidden;
+      -webkit-touch-callout: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header is Start Here  -->
+  <header class="header ">
+    <div class="strip">
+      <div class="container d-flex justify-content-between">
+        <div class="mail">
+          <a class="text-white fw-light" href="#">
+            <span><i class="fa-solid fa-envelope"></i></span>
+            ibin@iirs.gov.in
+          </a>
+        </div>
+        <div class="contact">
+          <a class="text-white fw-light" href="#">Contact Us</a>
+          <span class="text-white">|</span>
+          <a class="text-white fw-light" href="#">Login / Register</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav is STart Here  -->
+    <nav class="NewNav navbar navbar-expand-lg navbar-white bg-white">
+      <div class="container">
+        <a data-aos="zoom-in" class="navbar-brand" href="#"><img class="w-100" src="./assets/image/Logo.png"
+            alt="Logo" /></a>
+
+        <button class="navbar-toggler" onclick="togleBar()" id="togleFaFa" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+
+
+        <div class="Head_nav collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto mb-2">
+            <li class="nav-item dropdown mx-3">
+              <a class="dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Spiecies
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item active mx-3">
+              <a class="text-dark" href="#">Maps</a>
+            </li>
+            <li class="nav-item dropdown mx-3">
+              <a class="dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Modelling
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="text-dark" href="#">Field Cuides</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="text-dark" href="#">Satellite Telemetry</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="text-dark" href="#">Citizen Science</a>
+            </li>
+          </ul>
+          <div class="right d-flex align-items-center">
+            <div class="search_icon mx-4">
+              <span class="text-light">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
+            </div>
+            <figure class="img-ind m-0">
+              <img src="./assets/image/nav-img.png" alt="" />
+            </figure>
+          </div>
+        </div>
+    </nav>
+    </div>
+  </header>
+
+  <!-- Banner is Start Here  -->
+  <section class="banner d-flex flex-column align-items-center justify-content-center">
+    <div class="container">
+      <div class="content text-center">
+        <h1 class="text-light fw-300">GET ACCESS TO OUR</h1>
+        <h1 class="text-light fw-500">RICH BIO RESOURCE DATABASE</h1>
+      </div>
+      <form class="searchBox text-center mt-5">
+        <input class="m-0" type="text" placeholder="Search species, datasets, and more..." />
+        <button class="text-white" type="submit">
+          <span class="text-light">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+          <span class="mx-2">Search</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <section class="mainSlide py-3 w-100">
+    <div class="container">
+      <div class="slider header_slick d-flex justify-content-between">
+        <div class="slide px-3 py-4 mx-3 text-center">
+          <img class="w-25 mx-auto" src="./assets/image/slide-1.png" alt="" />
+          <h6 class="mt-4 fw-bold text-uppercase">SPECIES INFORMATION</h6>
+          <p class="mt-3">
+            Descriptive pages for every species from authenticated sources.
+            Help collaborate and build information on India's species.
+          </p>
+        </div>
+        <div class="slide px-3 py-4 mx-3 text-center">
+          <img class="w-25 mx-auto" src="./assets/image/slide-2.png" alt="" />
+          <h6 class="mt-4 fw-bold text-uppercase">MAPS</h6>
+          <p class="mt-3">
+            Descriptive pages for every species from authenticated sources.
+            Help collaborate and build information on India's species.
+          </p>
+        </div>
+        <div class="slide px-3 py-4 mx-3 text-center">
+          <img class="w-25 mx-auto" src="./assets/image/slide-3.png" alt="" />
+          <h6 class="mt-4 fw-bold text-uppercase">TAXONOMY</h6>
+          <p class="mt-3">
+            Descriptive pages for every species from authenticated sources.
+            Help collaborate and build information on India's species.
+          </p>
+        </div>
+        <div class="slide px-3 py-4 mx-3 text-center">
+          <img class="w-25 mx-auto" src="./assets/image/slide-3.png" alt="" />
+          <h6 class="mt-4 fw-bold text-uppercase">SPECIES INFORMATION</h6>
+          <p class="mt-3">
+            Descriptive pages for every species from authenticated sources.
+            Help collaborate and build information on India's species.
+          </p>
+        </div>
+      </div>
+
+      <div class="paginator-center text-color text-center">
+        <li class=" arrow pre"><i class="fa fa-chevron-left" aria-hidden="true"></i></li>
+        <li class=" arrow nex"><i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="ibin_portel">
+    <div class="container d-flex justify-content-between">
+      <div class="row">
+        <div class="content col-mds-12 col-md-5">
+          <h2 class="text-uppercase fw-bold">
+            IBIN Portal
+            <br />
+            A distributed Database
+            <br />
+            on Bio resources
+          </h2>
+          <h4 class="fs-4 fw-light mt-2">
+            IBIN portal is visualised as a federally distributed database
+            metwork on bio-resources and Bio resource of the country
+          </h4>
+          <p class="mt-4">
+            Indian Bioresource Information Network (IBIN) is being developed as
+            a distributed national infrastructure to serve relevant information
+            on diverse range of issues of bioresources of the country to a range
+            of end users. Its major goal is to network and promote an open
+            ended, co-evolutionary growth among all the digital .
+          </p>
+          <a href="#" class="gl_button text-white">Read More</a>
+        </div>
+
+        <figure class="img w-50  col-mds-12 col-md-7">
+          <img class="w-100" src="./assets/image/side-img.png" alt="" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Analiyes start Here  -->
+  <section class="dataAnal">
+    <div class="container d-flex justify-content-between">
+      <div class="cards w-50">
+        <div class="cards_v w-75 d-flex flex-wrap ">
+          <div class="card_n w-50 d-flex py-3 px-3 d-flex justify-content-center">
+            <img src="./assets/image/analyze_1.png" alt="" />
+            <div class="text mx-3 mt-1 w-25">
+              <h4 class="text-white m-0">43711</h4>
+              <p class="text-white m-0">Species</p>
+            </div>
+          </div>
+          <div class="card_n w-50 d-flex py-3 px-3 d-flex justify-content-center">
+            <img src="./assets/image/analyze_2.png" alt="" />
+            <div class="text mx-3 mt-1 w-25">
+              <h4 class="text-white m-0">1900</h4>
+              <p class="text-white m-0">Chromosomes</p>
+            </div>
+          </div>
+          <div class="card_n w-50 d-flex py-3 px-3 d-flex justify-content-center">
+            <img src="./assets/image/analyze_3.png" alt="" />
+            <div class="text mx-3 mt-1 w-25">
+              <h4 class="text-white m-0">281036</h4>
+              <p class="text-white m-0">Images</p>
+            </div>
+          </div>
+          <div class="card_n w-50 d-flex py-3 px-3 d-flex justify-content-center">
+            <img src="./assets/image/analyze_4.png" alt="" />
+            <div class="text mx-3 mt-1 w-25">
+              <h4 class="text-white m-0">20</h4>
+              <p class="text-white m-0">Maps</p>
+            </div>
+          </div>
+          <div class="card_n w-50 d-flex py-3 px-3 d-flex justify-content-center">
+            <img src="./assets/image/analyze_5.png" alt="" />
+            <div class="text mx-3 mt-1 w-25">
+              <h4 class="text-white m-0">150</h4>
+              <p class="text-white m-0">Chemicals</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="analis w-50">
+        <h2>
+          <span class="fw-light">Data</span>
+          <span class="fw-bold">Analytics</span>
+        </h2>
+        <div class="tabs mt-4 d-flex justify-content-between">
+          <button onclick="activeTabContent(0)" class="w-25 mx-md-1 fw-bold tab text-white tabActive">
+            SPECIES
+          </button>
+          <button onclick="activeTabContent(1)" class="w-25 mx-md-1 fw-bold tab text-white">
+            MAPS
+          </button>
+          <button onclick="activeTabContent(2)" class="w-25 mx-md-1 fw-bold tab text-white">
+            CHEMICALS
+          </button>
+          <button onclick="activeTabContent(3)" class="w-25 mx-md-1 fw-bold tab text-white">
+            USERS
+          </button>
+        </div>
+        <div class="tabscontent mt-4 w-100">
+          <div class="tab_content mt-3 w-100 d-flex justify-content-between">
+            <div id="chartContainer" style="height: 200px; width: 60%;"></div>
+            <div class="content d-flex flex-column w-50 justify-content-center px-3">
+              <p class="m-0">Total Specles 1</p>
+              <p class="m-0"><b class="m-0">6000</b></p>
+            </div>
+          </div>
+          <div class="tab_content mt-3 w-100 d-flex justify-content-between">
+            <div id="chartContainer" style="height: 200px; width: 60%;"></div>
+            <div class="content d-flex flex-column w-50 justify-content-center px-3">
+              <p class="m-0">Total Specles 2</p>
+              <p class="m-0"><b class="m-0">6000</b></p>
+            </div>
+          </div>
+          <div class="tab_content mt-3 w-100 d-flex justify-content-between">
+            <div id="chartContainer" style="height: 200px; width: 60%;"></div>
+            <div class="content d-flex flex-column w-50 justify-content-center px-3">
+              <p class="m-0">Total Specles 3</p>
+              <p class="m-0"><b class="m-0">6000</b></p>
+            </div>
+          </div>
+          <div class="tab_content mt-3 w-100 d-flex justify-content-between">
+            <div id="chartContainer" style="height: 200px; width: 60%;"></div>
+            <div class="content d-flex flex-column w-50 justify-content-center px-3">
+              <p class="m-0">Total Specles 4</p>
+              <p class="m-0"><b class="m-0">6000</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- spec_feature start Here  -->
+  <section class="spec_feature">
+    <div class="container">
+      <div class="tab">
+        <div class="tab_but d-flex justify-content-left">
+          <button onclick="activeTabContent_1(0)" class="mx-1 fw-bold tabActiveButton">Species Features</button>
+          <button onclick="activeTabContent_1(1)" class="mx-1 fw-bold ">Species Features</button>
+          <button onclick="activeTabContent_1(2)" class="mx-1 fw-bold ">Other Features</button>
+        </div>
+        <div class="content mt-3">
+          <div class="tab_con active_con">
+            <h2 class="text-light"><span class="fw-light">Species 1</span> <span class="fw-bold">Features</span></h2>
+            <p class="text-light fw-300">A species is the basic unit of classification and a taxonomic rank of an
+              organism, as
+              well as a unit of . The total number of species is estimated to be between 8 and 8.7 million.</p>
+          </div>
+          <div class="tab_con">
+            <h2 class="text-light"><span class="fw-light">Species 2</span> <span class="fw-bold">Features</span></h2>
+            <p class="text-light fw-300">A species is the basic unit of classification and a taxonomic rank of an
+              organism, as
+              well as a unit of . The total number of species is estimated to be between 8 and 8.7 million.</p>
+          </div>
+          <div class="tab_con">
+            <h2 class="text-light"><span class="fw-light">Species 3</span> <span class="fw-bold">Features</span></h2>
+            <p class="text-light fw-300">A species is the basic unit of classification and a taxonomic rank of an
+              organism, as
+              well as a unit of . The total number of species is estimated to be between 8 and 8.7 million.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info mt-5">
+
+        <div class="row d-flex justify-content-center">
+          <div class="cardN col-md-6 col-lg-4 col-xl-4 mx-2 text-center px-3 py-5">
+            <figure class="image allPlant"></figure>
+            <h5 class="mt-3 fw-bold">PLANT</h5>
+            <P>About Lorem Ipsum, giving information on its origins,
+              as well as a random Lipsum generator.</P>
+          </div>
+          <div class="cardN col-md-6 col-lg-4 col-xl-4 mx-2 text-center px-3 py-5">
+            <figure class="image allPlant"></figure>
+            <h5 class="mt-3 fw-bold">ANIMALS</h5>
+            <P class="">About Lorem Ipsum, giving information on its origins,
+              as well as a random Lipsum generator.</P>
+          </div>
+          <div class="cardN mx-2 text-center px-3 py-5">
+            <figure class="image allPlant"></figure>
+            <h5 class="mt-3 fw-bold">FUNGI</h5>
+            <P>About Lorem Ipsum, giving information on its origins,
+              as well as a random Lipsum generator.</P>
+          </div>
+        </div>
+
+        <div class="row secondRow d-flex justify-content-center">
+          <div class="cardN mx-2 text-center px-3 py-5">
+            <figure class="image allPlant"></figure>
+            <h5 class="mt-3 fw-bold">PROTOZOA</h5>
+            <P>About Lorem Ipsum, giving information on its origins,
+              as well as a random Lipsum generator.</P>
+          </div>
+          <div class="cardN mx-2 text-center px-3 py-5">
+            <figure class="image allPlant"></figure>
+            <h5 class="mt-3 fw-bold">BACTERIA</h5>
+            <P>About Lorem Ipsum, giving information on its origins,
+              as well as a random Lipsum generator.</P>
+          </div>
+          <div class="cardN mx-2 text-center px-3 py-5">
+            <figure class="image allPlant"></figure>
+            <h5 class="mt-3 fw-bold">FLORA</h5>
+            <P>About Lorem Ipsum, giving information on its origins,
+              as well as a random Lipsum generator.</P>
+          </div>
+          <div class="cardN mx-2 text-center px-3 py-5">
+            <figure class="image allPlant"></figure>
+            <h5 class="mt-3 fw-bold">FIELD GUIDE</h5>
+            <P>About Lorem Ipsum, giving information on its origins,
+              as well as a random Lipsum generator.</P>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Observations -->
+  <section class="observation">
+    <div class="container">
+      <h2><span class="fw-light">Recent</span> <span>Observation</span></h2>
+      <p class="mt-4">A species is the basic unit of classification and a taxonomic rank of an organism, as well as a
+        unit of . The total number of species is estimated to be between 8 and 8.7 million.</p>
+      <div id="owlOne" class="crowsel owl-carousel mt-5">
+
+        <div class="item text-center">
+          <figure class="img w-100">
+            <img class="w-100" src="./assets/image/cardobje.png" alt="">
+          </figure>
+          <div class="content text-start">
+            <p><b>Green lizard on branch</b></p>
+            <p class="d-flex fw-light"><span class="mx-2"><i class="fa fa-map-marker" aria-hidden="true"></i></i></span>
+              <span>
+                33V3+X6 Rajnandgaon,
+                Chhattisgarh, India</span>
+            </p>
+          </div>
+        </div>
+        <div class="item text-center">
+          <figure class="img w-100">
+            <img class="w-100" src="./assets/image/cardobje1.png" alt="">
+          </figure>
+          <div class="content text-start">
+            <p><b>Green lizard on branch</b></p>
+            <p class="d-flex fw-light"><span class="mx-2"><i class="fa fa-map-marker" aria-hidden="true"></i></i></span>
+              <span>
+                33V3+X6 Rajnandgaon,
+                Chhattisgarh, India</span>
+            </p>
+          </div>
+        </div>
+        <div class="item text-center">
+          <figure class="img w-100">
+            <img class="w-100" src="./assets/image/cardobje2.png" alt="">
+          </figure>
+          <div class="content text-start">
+            <p><b>Green lizard on branch</b></p>
+            <p class="d-flex fw-light"><span class="mx-2"><i class="fa fa-map-marker" aria-hidden="true"></i></i></span>
+              <span>
+                33V3+X6 Rajnandgaon,
+                Chhattisgarh, India</span>
+            </p>
+          </div>
+        </div>
+        <div class="item text-center">
+          <figure class="img w-100">
+            <img class="w-100" src="./assets/image/cardobje3.png" alt="">
+          </figure>
+          <div class="content text-start">
+            <p><b>Green lizard on branch</b></p>
+            <p class="d-flex fw-light"><span class="mx-2"><i class="fa fa-map-marker" aria-hidden="true"></i></i></span>
+              <span>
+                33V3+X6 Rajnandgaon,
+                Chhattisgarh, India</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="item text-center">
+          <figure class="img w-100">
+            <img class="w-100" src="./assets/image/cardobje1.png" alt="">
+          </figure>
+          <div class="content text-start">
+            <p><b>Green lizard on branch</b></p>
+            <p class="d-flex fw-light"><span class="mx-2"><i class="fa fa-map-marker" aria-hidden="true"></i></i></span>
+              <span>
+                33V3+X6 Rajnandgaon,
+                Chhattisgarh, India</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button class="mx-auto d-block mt-3 gl_button">View All observation</button>
+    </div>
+
+  </section>
+
+  <!-- Latest News  -->
+  <section class="latestNews">
+    <div class="container">
+      <h2><span class="fw-light">Latest</span> News</h2>
+      <div class="row mt-4">
+        <div class="video col-md-6 p-0">
+          <div class="videoN">
+            <iframe width="100%" height="" src="https://www.youtube.com/embed/Tto8TS-fJQU" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <p class=" p-4 mx-6">Over 100 countries sign Kunming Declaration on
+            biodiversity conservation</p>
+        </div>
+        <div class="col-md-6 newsContent">
+          <div class="cards d-flex p-3 flex-row justify-content-center align-items-center">
+            <div class="date px-5 py-3 text-center">
+              <h2 class="m-0 text-white">16</h2>
+              <p class="text-white m-0">SEP
+                2022 </p>
+            </div>
+            <div class="content">
+              <p class="m-0 mx-4">Technology advances and ease in policy have facilitated
+                the access and thereby increasing the reach of spatial
+                data. Adding to this, the Web has facilitated easy </p>
+            </div>
+          </div>
+          <div class="cards d-flex p-3 mt-2 flex-row justify-content-center align-items-center">
+            <div class="date px-5 py-3 text-center">
+              <h2 class="m-0 text-white">29</h2>
+              <p class="text-white m-0">JULY
+                2021 </p>
+            </div>
+            <div class="content">
+              <p class="m-0 mx-4">Technology advances and ease in policy have facilitated
+                the access and thereby increasing the reach of spatial
+                data. Adding to this, the Web has facilitated easy </p>
+            </div>
+          </div>
+          <div class="cards d-flex p-3 mt-2 flex-row justify-content-center align-items-center">
+            <div class="date px-5 py-3 text-center">
+              <h2 class="m-0 text-white">26</h2>
+              <p class="text-white m-0">JULY
+                2021 </p>
+            </div>
+            <div class="content">
+              <p class="m-0 mx-4">Technology advances and ease in policy have facilitated
+                the access and thereby increasing the reach of spatial
+                data. Adding to this, the Web has facilitated easy </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bribs is Start Here  -->
+  <section class="bribs">
+    <div class="container">
+      <h3>Brics</h3>
+      <p class="mt-3">A set of participant organizations willing to contribute to IBIN Portal would be identified and
+        facilitated to be partners of IBIN. In the meanwhile, it was also suggested that IBIN shall develop a
+        business plan for itself and accordingly several rounds of discussions were held on the possible business plan.
+      </p>
+
+      <div class="mainSlick">
+
+        <div id="owlTwo" class=" center text-center mt-4">
+
+          <div class="item slide text-center">
+            <img class="w-25 mx-auto" src="./assets/image/sunSite.png" alt="">
+            <p class="mt-2 ">North-Eastern Hill University,
+              Shillong</p>
+          </div>
+          <div class="item slide text-center">
+            <img class="w-25 mx-auto" src="./assets/image/sunSite1.png" alt="">
+            <p class="mt-2 ">North-Eastern Hill University,
+              Shillong</p>
+          </div>
+          <div class="item slide text-center">
+            <img class="w-25 mx-auto" src="./assets/image/sunSite2.png" alt="">
+            <p class="mt-2 ">North-Eastern Hill University,
+              Shillong</p>
+          </div>
+          <div class="item slide text-center">
+            <img class="w-25 mx-auto" src="./assets/image/sunSite2.png" alt="">
+            <p class="mt-2 ">North-Eastern Hill University,
+              Shillong</p>
+          </div>
+          <div class="item slide text-center">
+            <img class="w-25 mx-auto" src="./assets/image/sunSite3.png" alt="">
+            <p class="mt-2 ">North-Eastern Hill University,
+              Shillong</p>
+          </div>
+          <div class="item slide text-center">
+            <img class="w-25 mx-auto" src="./assets/image/sunSite4.png" alt="">
+            <p class="mt-2 ">North-Eastern Hill University,
+              Shillong</p>
+          </div>
+          <div class="item slide text-center">
+            <img class="w-25 mx-auto" src="./assets/image/sunSite4.png" alt="">
+            <p class="mt-2 ">North-Eastern Hill University,
+              Shillong</p>
+          </div>
+
+        </div>
+        <div class="paginator-center text-color text-center">
+          <li class=" arrow prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></li>
+          <li class=" arrow next"><i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer is Start Here  -->
+  <footer class="footer">
+    <div class="container mb-4">
+      <div class="row">
+        <div class="col-md-4">
+          <figure class="logo w-50">
+            <img class="w-100" src="./assets/image/Logo.png" alt="">
+          </figure>
+          <p class="mt-3 w-75">Indian Bioresource Information Network (IBIN) is being developed as a distributed
+            national infrastructure
+            to serve relevant information on diverse range of issues of bioresources of the country to a range of end
+            users.</p>
+        </div>
+        <div class="col-md-4">
+          <h4 class="mb-4">Contact Us</h4>
+          <p>K N Ganeshaiah,
+            <span class="fw-bold">University of Agricultural Sciences (UAS),</span>
+            GKVK, Bangalore - 560 065.
+          </p>
+          <div class="contact">
+            <p><span class="mx-2"><img class="" src="./assets/image/telephone.png" alt=""></span> 080 23636276</p>
+            <p><span class="mx-2"><i class="fa fa-mobile" aria-hidden="true"></i></span> 9342160639</p>
+            <p><span class="mx-2"><i class="fa fa-envelope" aria-hidden="true"></i></span> knganeshaiah@gmail.com</p>
+            <p><span class="mx-2"><i class="fa fa-globe" aria-hidden="true"></i></span> www.uasbangalore.edu.in</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h4 class="mb-4">Newsletter</h4>
+          <p>Receive the latest updates, offers, promotions and giveaways if you sign up with our newsletter.
+          </p>
+          <form class="newsLatter" action="#">
+            <input type="text" placeholder="Enter E-Mail Id">
+            <button>Join Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footNav">
+      <div class="container">
+        <nav class="navbar py-4">
+          <div class="nav py-0">
+            <ul class="d-flex m-0 p-0">
+              <li class="mx-3"><a class="text-white" href="#">FAQ</a></li>
+              <li class="mx-3"><a class="text-white" href="#">Policy</a></li>
+              <li class="mx-3"><a class="text-white" href="#">Site Map</a></li>
+              <li class="mx-3"><a class="text-white" href="#">Feedback</a></li>
+              <li class="mx-3"><a class="text-white" href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="perm d-flex justify-content-center align-items-center">
+            <p class="text-light m-0 mx-3">Funded By: </p>
+            <img src="./assets/image/fundedby.png" alt="">
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="copyRight py-2">
+      <div class="container row justify-content-between">
+        <div class="socal col-md-4 col-12 col-lg-4">
+          <a href="#"><span class="text-white mx-1"><i class="fa-brands fa-facebook-f"></i></span></a>
+          <a href="#"><span class="text-white mx-1"><i class="fa-brands fa-twitter"></i></span></a>
+          <a href="#"><span class="text-white mx-1"><i class="fa-brands fa-youtube"></i></i></span></a>
+        </div>
+        <p class="text-white m-0 mt-1 col-md-4 col-lg-4 text-center">© 2021 All Rights Reserved by IBIN</p>
+        <p class="text-white m-0 mt-1 col-md-4 col-lg-4 text-end">Design By Broadway Infotech</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- script Here  -->
+  <script src="./js/jquery.js"></script>
+
+  <script src="./js/owlCrowsel.js"></script>
+
+  <script src="./js/chartCanwas.js"></script>
+
+  <script src="./js/slike.js"></script>
+
+  <script src="./js/bootstrap wrapper.js"></script>
+
+  <script src="./js/bootstrap.js"></script>
+
+
+  <script src="./js/javaScript.js"></script>
+
+  <script>
+    AOS.init();
+
+    $('.header_slick').slick({
+      centerMode: true,
+      arrows: true,
+      loop: true,
+      prevArrow: $('.pre'),
+      nextArrow: $('.nex'),
+      slidesToShow: 3,
+      responsive: [
+        {
+          breakpoint: 700,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 1024,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 770,
+          settings: {
+            arrows: false,
+            centerMode: false,
+            centerPadding: '40px',
+            slidesToShow: 2
+          }
+        }
+      ]
+    });
+
+    $('.center').slick({
+      centerMode: true,
+      arrows: true,
+      loop: true,
+      prevArrow: $('.prev'),
+      nextArrow: $('.next'),
+      slidesToShow: 5,
+      slidesToScroll: 5,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            slidesToShow: 3,
+          }
+        },
+
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: false,
+            slidesToShow: 2,
+          }
+        },
+
+        {
+          breakpoint: 480,
+          slidesToShow: 5,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
+    $(document).ready(function () {
+      $('#owlOne').owlCarousel({
+        loop: true,
+        margin: 15,
+        nav: true,
+        dots: false,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 3
+          },
+          1024: {
+            items: 4
+          }
+        }
+      });
+    });
+
+
+  </script>
+</body>
+
+</html>
